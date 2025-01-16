@@ -158,7 +158,7 @@ function setup() {
   
   frameRate(60);
   
-  canvas = createCanvas(windowWidth, windowHeight, WEBGL);
+  canvas = createCanvas(1024, 600, WEBGL);
 
   // Crea el objeto de video y carga el archivo MP4
   CargandoANM = createVideo("Assets/Animacion de inicio.mp4");
@@ -212,7 +212,7 @@ function draw() {
       );
     }
     
-    image(AlstralLogo, width/2 - AlstralLogo.width*0.18/2, - height*0.33, AlstralLogo.width*0.18, AlstralLogo.height*0.18);
+    image(AlstralLogo, 20, - height*0.39, AlstralLogo.width*0.12, AlstralLogo.height*0.12);
 
     let DuracionTotal = CargandoANM.duration();
 
@@ -278,7 +278,7 @@ function draw() {
       rotateZ(PI);
       rotateY(map(Rotacion, -1, 1, -HALF_PI * 0.5, -HALF_PI * 0.06));
       rotateX(map(Rotacion, -1, 1, 0, HALF_PI * 0.45));
-      scale(map(Rotacion, -1, 1, 1, 6));
+      scale(map(Rotacion, -1, 1, 1, 4.6));
       texture(Texture);
       model(Earth);
       pop();
@@ -418,7 +418,7 @@ function callbackFunction(){
         
       }
   
-    image(LogoSV, width/2-(LogoSV.width*height*0.00021) + 200, height*0.05 -height/2, LogoSV.width*height*0.00016, LogoSV.height*height*0.00016);
+    image(LogoSV, width/2-(LogoSV.width*height*0.00021) + 130, height*0.05 -height/2 + 3, LogoSV.width*height*0.00019, LogoSV.height*height*0.00019);
   
     if (Leyenda.width*height*0.0003 >= width) {
   
@@ -426,7 +426,7 @@ function callbackFunction(){
   
     } else {
       
-      image(Leyenda, 0, height*0.43, Leyenda.width*height*0.0003, Leyenda.height*height*0.0003);
+      image(Leyenda, 0, height*0.43, Leyenda.width*height*0.00042, Leyenda.height*height*0.00042);
       
     }
 
@@ -436,8 +436,4 @@ function ReadMAClocation() { // no funciona, no preocuparse desabilitada
   
     get_position_data();
   
-}
-
-function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
 }
